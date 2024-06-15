@@ -1,0 +1,10 @@
+What to do:
+Lets make it divided by functionalities
+- printing board
+- make move from command it can be any move, just take a piece and place it anywhere
+- players make moves in turns
+- make moves possible and not, depends on the status on chessboard
+- add mechanic of upgrading pawn to figure
+- add castling
+- add checking
+- add check mate
