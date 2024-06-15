@@ -1,7 +1,12 @@
 #include<iostream>
+#include<tuple>
+
+#include"chessboard.hpp"
 
 int main()
 {
-	std::cout << "Hello" << std::endl;
+	Chessboard test;
+	test.print();
+
 	return 0;
 }
