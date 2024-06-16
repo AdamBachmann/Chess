@@ -133,3 +133,16 @@ void Chessboard::print()
 		std::cout << std::endl;
 	}
 }
+
+int Chessboard::move_piece(Piece whence, std::pair<char, int> destination) {
+	auto element = std::find_if(pieces.begin(), pieces.end(), [whence](Piece i) mutable {
+		return whence.get_position().first == i.get_position().first && whence.get_position().second == i.get_position().second;
+		});
+
+	if (element == pieces.end()){
+		return -1;
+	}
+
+	element->set_position(destination);
+	return 0;
+}
