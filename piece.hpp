@@ -3,30 +3,27 @@
 #include <string>
 
 typedef enum Piece_type_t {
-	PAWN,
-	KNIGHT,
-	BISHOP,
-	ROOK,
-	QUEEN,
-	KING
+	DEFAULT = 'X',
+	PAWN = 'P',
+	KNIGHT = 'N',
+	BISHOP = 'B',
+	ROOK = 'R',
+	QUEEN = 'Q',
+	KING= 'K'
 };
 
 class Piece
 {
 private:
-	char symbol;
+	Piece_type_t type;
 	std::pair<char, int> position;
-	std::string type;
 
 public:
-	Piece(char symbol = 'X', std::pair<char, int> position = { 'X', 0 }, std::string type = "X") : symbol{symbol}, position{position}, type{type} {};
-
-	char get_symbol() { return symbol; };
-	void set_symbol(char _symbol) { symbol = _symbol; };
+	Piece(Piece_type_t type = DEFAULT, std::pair<char, int> position = { 'X', 0 }) : type{type}, position{position} {};
 
 	std::pair<char, int> get_position() { return position; };
 	void set_position(std::pair<char, int> _position) { position = _position; };
 
-	std::string get_type() { return type; };
-	void set_type(std::string _type) { type = _type; };
+	Piece_type_t get_type() { return type; };
+	void set_type(Piece_type_t _type) { type = _type; };
 };

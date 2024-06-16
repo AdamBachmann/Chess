@@ -8,3 +8,6 @@ Lets make it divided by functionalities
 - add castling
 - add checking
 - add check mate
+
+
+mozna dodac komende aby printowala pozycje po numerze ruchu

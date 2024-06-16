@@ -4,41 +4,38 @@
 Chessboard::Chessboard()
 {
 	pieces = {
-		Piece{ 'P', {'A',2}, "Pawn"		}, 
-		Piece{ 'P', {'B',2}, "Pawn"		},
-		Piece{ 'P', {'C',2}, "Pawn"		},
-		Piece{ 'P', {'D',2}, "Pawn"		},
-		Piece{ 'P', {'E',2}, "Pawn"		},
-		Piece{ 'P', {'F',2}, "Pawn"		},
-		Piece{ 'P', {'G',2}, "Pawn"		},
-		Piece{ 'P', {'H',2}, "Pawn"		},
-
-		Piece{ 'R', {'A',1}, "Rook"		},
-		Piece{ 'N', {'B',1}, "Knight"	},
-		Piece{ 'B', {'C',1}, "Bishop"	},
-		Piece{ 'Q', {'D',1}, "Queen"	},
-		Piece{ 'K', {'E',1}, "King"		},
-		Piece{ 'B', {'F',1}, "Bishop"	},
-		Piece{ 'N', {'G',1}, "Knight"	},
-		Piece{ 'R', {'H',1}, "Rook"		},
-
-		Piece{ 'P', {'A',7}, "Pawn"		},
-		Piece{ 'P', {'B',7}, "Pawn"		},
-		Piece{ 'P', {'C',7}, "Pawn"		},
-		Piece{ 'P', {'D',7}, "Pawn"		},
-		Piece{ 'P', {'E',7}, "Pawn"		},
-		Piece{ 'P', {'F',7}, "Pawn"		},
-		Piece{ 'P', {'G',7}, "Pawn"		},
-		Piece{ 'P', {'H',7}, "Pawn"		},
-
-		Piece{ 'R', {'A',8}, "Rook"		},
-		Piece{ 'N', {'B',8}, "Knight"	},
-		Piece{ 'B', {'C',8}, "Bishop"	},
-		Piece{ 'Q', {'D',8}, "Queen"	},
-		Piece{ 'K', {'E',8}, "King"		},
-		Piece{ 'B', {'F',8}, "Bishop"	},
-		Piece{ 'N', {'G',8}, "Knight"	},
-		Piece{ 'R', {'H',8}, "Rook"		},
+		Piece{ PAWN,	{'A',2}}, 
+		Piece{ PAWN,	{'B',2}},
+		Piece{ PAWN,	{'C',2}},
+		Piece{ PAWN,	{'D',2}},
+		Piece{ PAWN,	{'E',2}},
+		Piece{ PAWN,	{'F',2}},
+		Piece{ PAWN,	{'G',2}},
+		Piece{ PAWN,	{'H',2}},
+		Piece{ ROOK,	{'A',1}},
+		Piece{ KNIGHT,	{'B',1}},
+		Piece{ BISHOP,	{'C',1}},
+		Piece{ QUEEN,	{'D',1}},
+		Piece{ KING,	{'E',1}},
+		Piece{ BISHOP,	{'F',1}},
+		Piece{ KNIGHT,	{'G',1}},
+		Piece{ ROOK,	{'H',1}},
+		Piece{ PAWN,	{'A',7}},
+		Piece{ PAWN,	{'B',7}},
+		Piece{ PAWN,	{'C',7}},
+		Piece{ PAWN,	{'D',7}},
+		Piece{ PAWN,	{'E',7}},
+		Piece{ PAWN,	{'F',7}},
+		Piece{ PAWN,	{'G',7}},
+		Piece{ PAWN,	{'H',7}},
+		Piece{ ROOK,	{'A',8}},
+		Piece{ KNIGHT,	{'B',8}},
+		Piece{ BISHOP,	{'C',8}},
+		Piece{ QUEEN,	{'D',8}},
+		Piece{ KING,	{'E',8}},
+		Piece{ BISHOP,	{'F',8}},
+		Piece{ KNIGHT,	{'G',8}},
+		Piece{ ROOK,	{'H',8}},
 	};
 }
 
@@ -120,7 +117,7 @@ void Chessboard::print()
 					int is_empty = 1;
 					for (auto piece : pieces) {
 						if (row == piece.get_position().second * 2 - 1 && column == (((piece.get_position().first - 'A') + 1) * 2 - 1)) {
-							std::cout << piece.get_symbol();
+							std::cout << char(piece.get_type());
 							is_empty = 0;
 						}
 					}
