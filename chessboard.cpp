@@ -116,15 +116,15 @@ void Chessboard::print()
 					std::cout << char(vertical);
 				}
 				else {
-					//check pieces
-					int write_space = 0;
+					//fill pieces
+					int is_empty = 1;
 					for (auto piece : pieces) {
 						if (row == piece.get_position().second * 2 - 1 && column == (((piece.get_position().first - 'A') + 1) * 2 - 1)) {
 							std::cout << piece.get_symbol();
-							write_space = 1;
+							is_empty = 0;
 						}
 					}
-					if (write_space == 0) {
+					if (is_empty == 1) {
 						std::cout << " ";
 					}
 				}
